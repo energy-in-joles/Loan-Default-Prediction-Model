@@ -1,3 +1,3 @@
-# Loan-Prediction-Model
+# Loan-Default-Prediction-Model
 Loan Prediction Model with Median/Mode NaN Imputation.
 (Model built for Loan Prediction Practice Problem from Analytics Vidhya)
