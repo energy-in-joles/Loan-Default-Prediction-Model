@@ -31,14 +31,13 @@ from sklearn.ensemble import RandomForestClassifier
 clf = RandomForestClassifier(n_estimators=100,min_samples_leaf=20)
 clf = clf.fit(x, y)
 
-applications_prediction = applications 
+applications_prediction = applications.copy()
 applications = clean(applications)
 applications_prediction['Loan_Status'] = np.nan
 applications_prediction.drop(features,axis=1,inplace=True)
 
-applications_features = list(applications.columns[1:12])
 for index, row in applications.iterrows():
-	applications_data = row[applications_features].tolist()
+	applications_data = row[features].tolist()
 	num_ans = clf.predict([applications_data])
 	ans = [key for key, value in d.items() if value == num_ans[0]][0]
 	applications_prediction.loc[index,'Loan_Status'] = ans
