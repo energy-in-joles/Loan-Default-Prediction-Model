@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from sklearn import tree
 
 train = pd.read_csv('Train-Data Loan.csv') #replace csv file with training data
 applications = pd.read_csv('Test-Data Loan.csv') #replace csv file with data to predict
